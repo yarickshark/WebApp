@@ -3,7 +3,7 @@ import React from 'react';
 import Header from './components/Header';
 
 class App extends React.Component {
-  helpText = initData
+  helpText = ${WebApp.WebAppUser.username}
   //helpText = "Help text"
   render() {
     return (<div className="name">
