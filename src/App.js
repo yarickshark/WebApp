@@ -3,7 +3,8 @@ import React from 'react';
 import Header from './components/Header';
 
 class App extends React.Component {
-  helpText = "Help text"
+  helpText = initData
+  //helpText = "Help text"
   render() {
     return (<div className="name">
     <Header title="Шапка сайта" />
