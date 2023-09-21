@@ -85,17 +85,17 @@ const DateTimePicker = () => {
 
   return (
     <div>
-      <label htmlFor="date">Выберите дату:</label>
+      <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
         {generateDateOptions()}
-      </select>
+      </select><br /><br />
 
-      <label htmlFor="hour">Выберите час:</label>
+      <label htmlFor="hour">Оберіть час:</label>
       <select id="hour" onChange={handleHourChange}>
         {generateHourOptions()}
-      </select>
+      </select><br /><br />
 
-      <label htmlFor="minute">Выберите минуту:</label>
+      <label htmlFor="minute">Оберіть хвилини:</label>
       <select id="minute" onChange={handleMinuteChange}>
         {generateMinuteOptions()}
       </select>
