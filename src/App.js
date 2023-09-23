@@ -18,7 +18,7 @@ import Header from './components/Header';
 
 //export default App
 
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebAppUser;
 
 const DateTimePicker = () => {
   // Стейт для хранения выбранной даты, часов и минут
@@ -91,6 +91,8 @@ const DateTimePicker = () => {
 
   return (
     <div>
+
+      user: {tg.first_name}
 
       <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
