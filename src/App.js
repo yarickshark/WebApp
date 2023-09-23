@@ -19,7 +19,7 @@ import Header from './components/Header';
 
 //export default App
 
-const tg = window.Telegram.WebAppUser;
+const tg = window.Telegram.WebApp;
 
 const DateTimePicker = () => {
   // Стейт для хранения выбранной даты, часов и минут
