@@ -104,7 +104,7 @@ const DateTimePicker = () => {
       <label htmlFor="minute">Оберіть хвилини:</label>
       <select id="minute" onChange={handleMinuteChange}>
         {generateMinuteOptions()}
-      </select>
+      </select><br /><br />
 
       <button onClick ={onClose}>Закрыть</button>
     </div>
