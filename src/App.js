@@ -90,11 +90,15 @@ const DateTimePicker = () => {
     tg.close()
      }
 
+  const getKeys = () => {
+    tg.CloudStorage.getKeys()
+  }
+
   return (
     <div>
 
       Вітаю, {tg.initDataUnsafe.user.username} <br /><br />
-      {tg.CloudStorage.getKeys()} <br /><br />
+      {msg.payload[0].client_id} <br /><br />
 
       <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
