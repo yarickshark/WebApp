@@ -60,7 +60,7 @@ const DateTimePicker = () => {
   // Генерация минут (00-59)
   const generateMinuteOptions = () => {
     const options = [];
-    for (let i = 0; i <= 59; i += 10) {
+    for (let i = 0; i <= 59; i += 5) {
       options.push(
         <option key={i} value={i}>
           {i < 10 ? `0${i}` : i}
