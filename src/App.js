@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 //import * as ReactDOMClient from 'react-dom/client';
 import Header from './components/Header';
 //import React, { useState } from 'react';
+//window.Telegram.WebApp.
 
 //class App extends React.Component {
   //helpText = WebAppUser.username

@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: dimgray;
+    background-color: var(--tg-theme-bg-color);
     color: azure;
 }
 
