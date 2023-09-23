@@ -93,7 +93,7 @@ const DateTimePicker = () => {
   return (
     <div>
 
-      <input type="text" placeholder={tg.id} /><br /><br />
+      <input type="text" placeholder={tg.initData} /><br /><br />
 
       <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
