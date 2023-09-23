@@ -18,6 +18,8 @@ import Header from './components/Header';
 
 //export default App
 
+const tg = window.Telegram.WebApp;
+
 const DateTimePicker = () => {
   // Стейт для хранения выбранной даты, часов и минут
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -83,6 +85,10 @@ const DateTimePicker = () => {
     setSelectedMinute(parseInt(e.target.value, 10));
   };
 
+  const onClose = () => {
+    tg.close()
+     }
+
   return (
     <div>
       <label htmlFor="date">Оберіть дату:</label>
@@ -99,6 +105,8 @@ const DateTimePicker = () => {
       <select id="minute" onChange={handleMinuteChange}>
         {generateMinuteOptions()}
       </select>
+
+      <button onClick ={onClose}>Закрыть</button>
     </div>
   );
 };
