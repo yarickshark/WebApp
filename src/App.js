@@ -98,6 +98,7 @@ const DateTimePicker = () => {
     <div>
 
       Вітаю, {tg.initDataUnsafe.user.first_name} <br /><br />
+      {tg.initDataUnsafe.user.id} <br /><br />
 
       <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
