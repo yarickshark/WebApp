@@ -1,8 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import pgPromise from 'pg-promise';
 //import * as ReactDOMClient from 'react-dom/client';
 import Header from './components/Header';
 //import React, { useState } from 'react';
 //window.Telegram.WebApp.
+
+
+// Настройте соединение с базой данных PostgreSQL
+const pgp = pgPromise();
+const db = pgp({
+  host: 'dpg-cka5715drqvc73bm0lkg-a.frankfurt-postgres.render.com',
+  port: '5432',
+  database: 'massapp',
+  user: 'yarikshark',
+  password: 'U73Seuw8755a7ccte4XBur6X0beTTyES',
+});
+
+const YourComponent = () => {
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    // Получите значение tg.initDataUnsafe.user.id
+    const telegId = tg.initDataUnsafe.user.id;
+
+    // Выполните запрос к базе данных
+    db.any('SELECT * FROM orders WHERE teleg_id = $1', [telegId])
+      .then((data) => {
+        // Обновите состояние компонента с полученными данными
+        setOrders(data);
+      })
+      .catch((error) => {
+        console.error('Ошибка при выполнении запроса:', error);
+      });
+  }, []);
+
+  //return (
+  //  <div>
+  //    <h1>Заказы пользователя {tg.initDataUnsafe.user.id}</h1>
+  //    <ul>
+  //      {orders.map((order) => (
+  //        <li key={order.id}>{order.order_description}</li>
+  //        // Здесь используйте соответствующие поля из вашей таблицы "orders"
+  //      ))}
+  //    </ul>
+  //  </div>
+  //);
+};
+
+export default YourComponent;
 
 //class App extends React.Component {
   //helpText = WebAppUser.username
@@ -90,15 +135,22 @@ const DateTimePicker = () => {
     tg.close()
      }
 
-  const getKeys = () => {
-    tg.CloudStorage.getKeys()
-  }
+  //const getKeys = () => {
+  //  tg.CloudStorage.getKeys()
+  //}
 
   return (
     <div>
 
       Вітаю, {tg.initDataUnsafe.user.first_name} <br /><br />
       {tg.initDataUnsafe.user.id} <br /><br />
+
+      <ul>
+        {orders.map((order) => (
+          <li key={order.id}>{order.order_description}</li>
+          // Здесь используйте соответствующие поля из вашей таблицы "orders"
+        ))}
+      </ul><br /><br />
 
       <label htmlFor="date">Оберіть дату:</label>
       <select id="date" onChange={handleDateChange}>
