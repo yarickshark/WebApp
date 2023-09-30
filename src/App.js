@@ -9,7 +9,7 @@ import Header from './components/Header';
 // Настройте соединение с базой данных PostgreSQL
 const pgp = pgPromise();
 const db = pgp({
-  host: 'dpg-cka5715drqvc73bm0lkg-a.frankfurt-postgres.render.com',
+  host: 'postgres://yarikshark:U73Seuw8755a7ccte4XBur6X0beTTyES@dpg-cka5715drqvc73bm0lkg-a.frankfurt-postgres.render.com/massapp',
   port: '5432',
   database: 'massapp',
   user: 'yarikshark',
@@ -47,7 +47,7 @@ const YourComponent = () => {
   //);
 };
 
-export default YourComponent;
+//export default YourComponent;
 
 //class App extends React.Component {
   //helpText = WebAppUser.username
