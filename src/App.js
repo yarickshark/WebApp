@@ -147,7 +147,8 @@ const DateTimePicker = () => {
 
       <ul>
         {orders.map((order) => (
-          <li key={order.id}>{order.order_description}</li>
+          <li key={order.id}>
+            <strong>Номер заказа:</strong> {order.price}<br /></li>
           // Здесь используйте соответствующие поля из вашей таблицы "orders"
         ))}
       </ul><br /><br />
